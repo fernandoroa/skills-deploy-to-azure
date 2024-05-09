@@ -17,6 +17,9 @@ env:
 jobs:
   setup-up-azure-resources:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     if: contains(github.event.pull_request.labels.*.name, 'spin up environment')
     steps:
       - name: Checkout repository
